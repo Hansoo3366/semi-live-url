@@ -1,0 +1,10 @@
+<svg width="21" height="24" viewBox="0 0 21 24" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#000" opacity=".6" d="M-288-183H72v1559h-360z"/>
+        <g transform="translate(-264 -155)">
+            <rect fill="#FFF" fill-rule="nonzero" width="312" height="1479" rx="20"/>
+            <path d="M24 155h264v28H24z"/>
+            <path d="m272.615 171.209-6.058-6.149.95-.936 5.108 5.185 5.109-5.185.95.936z" fill="#1C1C1C" fill-rule="nonzero"/>
+        </g>
+    </g>
+</svg>

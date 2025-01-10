@@ -1,0 +1,31 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter x="-31.2%" y="-6.7%" width="175%" height="116.1%" filterUnits="objectBoundingBox" id="f6hqz22mga">
+            <feMorphology radius=".5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"/>
+            <feOffset dx="3" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" in="shadowBlurOuter1"/>
+        </filter>
+        <rect id="niocbckjb" x="0" y="0" width="48" height="224" rx="24"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(-272 -111)">
+            <rect fill="#F7F7F7" width="312" height="395" rx="20"/>
+            <g fill="#000">
+                <text font-family="SamsungOne-400, SamsungOne" font-size="12" transform="translate(24 111)">
+                        <tspan x="0" y="42"> San Jose, CA</tspan>
+                    </text>
+                <text font-family="SamsungSharpSans-Bold, Samsung Sharp Sans" font-size="16" font-weight="bold" transform="translate(24 111)">
+                        <tspan x="0" y="16">Job Location</tspan>
+                    </text>
+            </g>
+        </g>
+        <g transform="translate(-8 -96)">
+            <use fill="#000" filter="url(#f6hqz22mga)" xlink:href="#niocbckjb"/>
+            <use fill="#FFF" xlink:href="#niocbckjb"/>
+        </g>
+        <g fill="#000">
+            <path d="M23.333 23.475h-2.9v-4.54c0-1.082-.02-2.474-1.508-2.474-1.51 0-1.74 1.18-1.74 2.397v4.617h-2.897V14.14h2.78v1.277h.04c.387-.734 1.334-1.509 2.745-1.509 2.938 0 3.48 1.933 3.48 4.447v5.12zM11.017 12.865a1.682 1.682 0 1 1-.003-3.364 1.682 1.682 0 0 1 .003 3.364zM12.468 23.475H9.563V14.14h2.905z"/>
+        </g>
+    </g>
+</svg>

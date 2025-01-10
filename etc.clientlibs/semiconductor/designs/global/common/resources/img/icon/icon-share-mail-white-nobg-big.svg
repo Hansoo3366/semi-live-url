@@ -1,0 +1,27 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter x="-31.2%" y="-6.7%" width="175%" height="116.1%" filterUnits="objectBoundingBox" id="fsuh20xwea">
+            <feMorphology radius=".5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"/>
+            <feOffset dx="3" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" in="shadowBlurOuter1"/>
+        </filter>
+        <rect id="z4659znzab" x="0" y="0" width="48" height="224" rx="24"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(-272 -151)">
+            <rect fill="#F7F7F7" width="312" height="395" rx="20"/>
+            <text transform="translate(24 111)" fill="#000" font-family="SamsungOne-400, SamsungOne" font-size="12">
+                        <tspan x="0" y="42"> San Jose, CA</tspan>
+                    </text>
+            <text transform="translate(24 182)" fill="#000" font-family="SamsungSharpSans-Bold, Samsung Sharp Sans" font-size="16" font-weight="bold">
+                        <tspan x="0" y="16">Category</tspan>
+                    </text>
+        </g>
+        <g transform="translate(-8 -136)">
+            <use fill="#000" filter="url(#fsuh20xwea)" xlink:href="#z4659znzab"/>
+            <use fill="#FFF" xlink:href="#z4659znzab"/>
+        </g>
+        <path d="m7.696 10.75 8.929 8.098 8.929-8.098H7.696zm-.446.802v11.05l5.678-5.902-5.678-5.148zm18.75 0L20.322 16.7 26 22.601V11.552zM13.584 17.3l-5.72 5.95h17.522l-5.72-5.95-2.741 2.483a.446.446 0 0 1-.6 0L13.584 17.3z" fill="#000" fill-rule="nonzero"/>
+    </g>
+</svg>

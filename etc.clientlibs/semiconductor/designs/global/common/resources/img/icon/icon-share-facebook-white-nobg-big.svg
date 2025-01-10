@@ -1,0 +1,30 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter x="-31.2%" y="-6.7%" width="175%" height="116.1%" filterUnits="objectBoundingBox" id="j1b7n7n78a">
+            <feMorphology radius=".5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"/>
+            <feOffset dx="3" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" in="shadowBlurOuter1"/>
+        </filter>
+        <rect id="cjmgx8ub4b" x="0" y="0" width="48" height="224" rx="24"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(-272 -31)">
+            <rect fill="#F7F7F7" width="312" height="395" rx="20"/>
+            <g fill="#000">
+                <text font-family="SamsungOne-400, SamsungOne" font-size="12" transform="translate(24 24)">
+                        <tspan x="0" y="42">C/C++ Cluster and Cloud Developer  </tspan>
+                        <tspan x="0" y="58">- Senior Staff Engineer</tspan>
+                    </text>
+                <text font-family="SamsungSharpSans-Bold, Samsung Sharp Sans" font-size="16" font-weight="bold" transform="translate(24 24)">
+                        <tspan x="0" y="16">Job Title</tspan>
+                    </text>
+            </g>
+        </g>
+        <g transform="translate(-8 -16)">
+            <use fill="#000" filter="url(#j1b7n7n78a)" xlink:href="#cjmgx8ub4b"/>
+            <use fill="#FFF" xlink:href="#cjmgx8ub4b"/>
+        </g>
+        <path d="M20.25 11.99H18.8c-1.137 0-1.358.527-1.358 1.298v1.703h2.713l-.354 2.667h-2.359V24.5h-2.827v-6.842H12.25v-2.667h2.365v-1.966c0-2.283 1.431-3.525 3.522-3.525 1.001 0 1.862.072 2.113.105v2.385z" fill="#000"/>
+    </g>
+</svg>

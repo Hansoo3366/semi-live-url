@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=960" />
+    <title>Live URL List - Samsung DS</title>
+    <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator_bootstrap5.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+    <!-- 기존 common.css 와의 비교 테스트를 위해 추가함 -->
+    <link rel="stylesheet" href="./etc.clientlibs/semiconductor/designs/global/common-old.min.css">
+    <link rel="stylesheet" href="./etc.clientlibs/semiconductor/designs/global/common.min.css">
+    <style>
+        /* font */
+        @font-face {
+            font-family: 'Samsung One';
+            font-weight: 400;
+            src: local('SamsungOne'), url('./etc.clientlibs/semiconductor/designs/global/common/resources/fonts/SamsungOne-400.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Samsung One';
+            font-weight: 700;
+            src: local('SamsungOne'), url('./etc.clientlibs/semiconductor/designs/global/common/resources/fonts/SamsungOne-700.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Samsung One KR';
+            font-weight: 400;
+            unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+            src: url('./etc.clientlibs/semiconductor/designs/global/common/resources/fonts/SamsungOneKorean-400.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Samsung One KR';
+            font-weight: 700;
+            unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+            src: url('./etc.clientlibs/semiconductor/designs/global/common/resources/fonts/SamsungOneKorean-700.woff2') format('woff2');
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            background: #fff;
+        }
+
+        body * {
+            font-family: 'Samsung One KR', 'Samsung One';
+            font-size: 12px;
+        }
+
+        *[aria-hidden=true] {
+            display: none !important;
+        }
+
+        .grid {
+            max-width: 100%;
+            max-height: 100%;
+            padding: 10px 30px 0;
+        }
+
+        h1 {
+            margin: 20px 0 20px;
+            font-size: 24px;
+        }
+
+        h2 {
+            margin: 0 0 20px;
+            font-size: 16px;
+        }
+
+        img {
+            display: block;
+            cursor: pointer;
+        }
+
+        a {
+            color: black;
+        }
+
+        a[download]:after {
+            content: '';
+            width: 10px;
+            display: inline-block;
+            height: 10px;
+            background-size: 10px;
+            margin: 0 0 0 3px;
+            background-image: url('./icon/icon-download-bold-black.svg') !important;
+        }
+
+        .filter-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        @media screen and (max-width: 1300px) {
+            .filter-wrap {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .filter-area {
+            width: 390px;
+            padding: 0 0 20px 0;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        .filter-btns-wrap {
+            display: inline-flex;
+            margin-left: 5px;
+        }
+
+        .filter-btns-wrap button {
+            margin: 0;
+            padding: 2px 5px;
+            border-radius: 0;
+            display: block;
+        }
+
+        .filter-btns-wrap button+button {
+            border-left: 0;
+        }
+
+        .filter-btns-wrap button:first-child {
+            padding-left: 8px;
+            border-radius: 100px 0 0 100px;
+        }
+
+        .filter-btns-wrap button:last-child {
+            padding-right: 8px;
+            border-radius: 0 100px 100px 0;
+        }
+
+        .filter-links ul {
+            display: flex;
+            padding: 20px 0;
+            gap: 20px;
+        }
+
+        .filter-links ul li a {
+            font-size: 14px;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .filter-links ul li.active a {
+            font-weight: bold;
+        }
+
+        .table {
+            margin: 0 0 30px;
+            overflow: auto;
+            border: 1px solid #ddd;
+        }
+
+        .table table {
+            border-top: 0;
+            border-collapse: collapse;
+            border-spacing: 0;
+            min-width: 100%;
+        }
+
+        .table thead {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            border: 0;
+            background: #fafafa;
+            color: #000;
+            margin-top: -1px;
+            ;
+            white-space: nowrap;
+        }
+
+        .table thead th {
+            border: none;
+            padding: 10px 10px;
+            background: #fafafa;
+        }
+
+        .table thead th:not(.sorter-false) {
+            cursor: pointer;
+        }
+
+        .table thead th:not(.sorter-false) .tablesorter-header-inner div {
+            display: inline;
+        }
+
+        .table thead th:not(.sorter-false) .tablesorter-header-inner:after {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin-left: 5px;
+            transform: rotate(45deg);
+            background: url("data:image/png;base64,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") no-repeat 0 0;
+            background-size: 100% auto;
+        }
+
+        .table thead th:first-child {
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+
+        .table thead th::before {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background: #ddd;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .table tbody th,
+        .table tbody td {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 10px;
+            background: #fff;
+            text-align: center;
+        }
+
+        .table tbody tr:last-child th,
+        .table tbody tr:last-child td {
+            border-bottom: 0;
+        }
+
+        /* 
+        .table tbody th {
+            text-align: left;
+        } */
+
+        .table tbody td.link {
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .table tbody tr th {
+            position: sticky;
+            left: 0;
+            z-index: 1;
+        }
+
+        .table tbody tr:hover th,
+        .table tbody tr:hover td {
+            background: #fafafa;
+        }
+
+        .table tbody tr.child th,
+        .table tbody tr.child td {
+            background: #fafbf0;
+        }
+
+        .table tbody tr.child:hover th,
+        .table tbody tr.child:hover td {
+            background: #f7f9e2;
+        }
+
+        .table tbody tr.child th:before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            height: 9px;
+            width: 7px;
+            margin-top: -9px;
+            margin-right: 5px;
+            border-bottom-left-radius: 1px;
+            border-left: 2px solid #333;
+            border-bottom: 2px solid #333;
+        }
+
+        .table tbody tr.static th,
+        .table tbody tr.static td {
+            background: #f0f5fb;
+        }
+
+        .table tbody tr.static:hover th,
+        .table tbody tr.static:hover td {
+            background: #eaf3ff;
+        }
+
+        .table tbody tr.no-use th,
+        .table tbody tr.no-use td {
+            background: #f3f3f3;
+            color: #aaa;
+        }
+
+        .table tbody tr.no-use:hover th,
+        .table tbody tr.no-use:hover td {
+            background: #f3f3f3;
+        }
+
+        .table tbody tr.no-use th {
+            text-decoration: line-through;
+        }
+
+        .table tbody tr:not(.no-use):hover {
+            font-weight: bold;
+        }
+
+        .table tbody tr td a.blue {
+            color: #0037dd !important;
+        }
+
+        .table::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        .table::-webkit-scrollbar-thumb {
+            background-color: #2f3542;
+        }
+
+        .table::-webkit-scrollbar-track {
+            background-color: #fafafa;
+        }
+
+        .list::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        .list::-webkit-scrollbar-thumb {
+            background-color: #2f3542;
+        }
+
+        .list::-webkit-scrollbar-track {
+            background-color: #fafafa;
+        }
+
+        #list.list {
+            margin: 0 0 30px;
+            overflow: auto;
+        }
+
+        ul.ul {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        ul.ul li {
+            width: calc(25% - 10px);
+            padding: 20px;
+            background: #fff5ef;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        ul.ul li .image {
+            position: relative;
+            aspect-ratio: 450 / 300;
+            min-width: 100%;
+            margin: 5px 0;
+            overflow: hidden;
+            background: #ddd;
+            border-radius: 20px;
+            border: 5px solid #ffdcc6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        ul.ul li.child {
+            background: #f9f9f9;
+            /* opacity: 0.2; */
+        }
+
+        ul.ul li.child .image {
+            background: #ffffff;
+            border-color: #dddddd;
+        }
+
+        ul.ul li.cnx-checked {
+            background: #f0f5fb;
+        }
+
+        ul.ul li.cnx-checked .image {
+            background: #f0f5fb;
+            border-color: #a7caff;
+        }
+
+        ul.ul li .link a {
+            white-space: nowrap;
+        }
+
+        ul.ul li .image img {
+            width: 100%;
+            border: none !important;
+            margin: -5px 0 0 0;
+        }
+
+        ul.ul li .image.has-multiple {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        ul.ul li .image.has-multiple img {
+            width: calc(50% - 3px);
+            height: 50%;
+        }
+
+        ul.ul li .component-name {
+            font-size: 14px;
+        }
+
+        ul.ul li .component-name strong {
+            float: right;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        ul.ul li .text-area {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px 20px;
+        }
+
+        ul.ul li.not-standalone .image:after {
+            content: '단독사용금지';
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #000;
+            color: #fff;
+            padding: 5px 20px;
+            border-radius: 100px;
+            overflow: hidden;
+            font-size: 16px;
+            border: 5px solid white;
+        }
+
+        button {
+            height: 23px;
+            font-size: 12px;
+            border: 1px solid #666;
+            padding: 2px 8px;
+            background: #fff;
+            border-radius: 100px;
+            margin-left: 5px;
+        }
+
+        button:focus,
+        button:hover {
+            border-color: #000;
+        }
+
+        input {
+            height: 18px;
+            font-size: 12px;
+            border: 1px solid #666;
+            padding: 2px 5px;
+        }
+
+        select {
+            height: 23px;
+            font-size: 12px;
+            border: 1px solid #666;
+            padding: 2px 10px 2px 5px;
+        }
+
+        button,
+        select {
+            vertical-align: bottom;
+        }
+
+        .table-count:before {
+            content: '(';
+        }
+
+        .table-count:after {
+            content: ')';
+        }
+
+        .line {
+            padding: 0 5px;
+        }
+
+        .layer {
+            position: fixed;
+            z-index: 99999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .layer .layer-img {
+            position: relative;
+            max-width: 1220px;
+            max-height: 100%;
+            overflow: auto;
+            margin: 0 auto;
+        }
+
+        .layer.wide .layer-img {
+            height: auto;
+        }
+
+        .layer img {
+            max-width: 1220px;
+            width: 100%;
+            height: auto;
+            user-select: none;
+        }
+
+        .layer.wide img {
+            width: 100%;
+            height: auto;
+        }
+
+        #search-input {
+            width: 150px;
+            display: inline-block !important;
+            font-size: 12px;
+            height: 23px !important;
+            padding: 2px 5px;
+        }
+
+        #search-input:hover,
+        #search-input:focus {
+            box-shadow: none;
+            border-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="filter-wrap">
+            <h1>Semiconductor Live URL List <span class="table-count"></span></h1>
+        </div>
+        <div id="table" class="table tablesorter">
+            <table role="grid">
+                <thead>
+                    <tr role="row">
+                        <th>
+                            <div>Date</div>
+                        </th>
+                        <th>
+                            <div>Global</div>
+                        </th>
+                        <th>
+                            <div>US</div>
+                        </th>
+                        <th>
+                            <div>EMEA</div>
+                        </th>
+                        <th>
+                            <div>KR</div>
+                        </th>
+                        <th>
+                            <div>JP</div>
+                        </th>
+                        <th>
+                            <div>CN</div>
+                        </th>
+                        <th>
+                            <div>SSIR</div>
+                        </th>
+                        <th>
+                            <div>Excel Downlaod</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.29.0/js/jquery.tablesorter.combined.js"
+        integrity="sha256-AQTn9CwiNvZG2zsoT0gswugjZp0alCQySLyt9brT9Cg=" crossorigin="anonymous"></script>
+    <script src="./file_list.js"></script>
+    <script>
+        const table = document.querySelector('#table tbody');
+        const dataList = Object.keys(fileList);
+
+        dataList.forEach((data) => {
+            const row = `<tr role="row">
+                            <th>${data}</th>
+                            <td>${fileList[data]['GLOBAL']}</td>
+                            <td>${fileList[data]['US']}</td>
+                            <td>${fileList[data]['EMEA']}</td>
+                            <td>${fileList[data]['KR']}</td>
+                            <td>${fileList[data]['JP']}</td>
+                            <td>${fileList[data]['CN']}</td>
+                            <td>${fileList[data]['SSIR']}</td>
+                            <td><a class="blue" href="./results/${data}/live_url_output.xlsx" download>Download</a></td>
+                        </tr>`
+            table.insertAdjacentHTML('beforeend', row);
+        })
+        document.querySelector('.table-count').innerHTML = `${dataList.length} results`
+        $(function () {
+            $("table").tablesorter({
+                sortList: [[0, 1]],
+                headers: {
+                    0: { sorter: 'date' },
+                    1: { sorter: false },
+                    2: { sorter: false },
+                    3: { sorter: false },
+                    4: { sorter: false },
+                    5: { sorter: false },
+                    6: { sorter: false },
+                    7: { sorter: false },
+                    8: { sorter: false },
+                }
+            });
+        });
+    </script>
+    <div class="author" style="padding: 0 0 0 30px;">
+        오류 문의: <a href="mailto:hansoo.kim1@concentrix.com">hansoo.kim1@concentrix.com</a><br />
+        해당 리스트는 <b><u>매주 월요일</u></b> 갱신됩니다.
+    </div>
+</body>
+
+</html>

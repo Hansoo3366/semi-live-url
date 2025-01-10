@@ -1,0 +1,15 @@
+<svg width="36" height="36" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter color-interpolation-filters="auto" id="a">
+            <feColorMatrix in="SourceGraphic" values="0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 0 1.000000 0 0 0 1.000000 0"/>
+        </filter>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <circle fill="#000" opacity=".3" transform="rotate(90 18 18)" cx="18" cy="18" r="18"/>
+        <g filter="url(#a)" stroke-linecap="round">
+            <g stroke="#FFF">
+                <path d="m23.516 15.87-5.005 5.224-5.005-5.224M18.511 20.179V10.125M13.717 24.293h9.857"/>
+            </g>
+        </g>
+    </g>
+</svg>

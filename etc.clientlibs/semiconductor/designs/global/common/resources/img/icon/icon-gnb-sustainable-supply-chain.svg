@@ -1,0 +1,20 @@
+<svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <path d="M0 28h28V0H0z"/>
+        <path stroke="#FFF" stroke-linecap="round" d="m15.43 24.125 6.589-3.535M5.622 20.5l6.822 3.644M4 9.84v8.118M12.449 3.853l-6.456 3.57M22.284 7.556l-6.675-3.671M24 18.107V9.92"/>
+        <path d="M13.984 1.943a2 2 0 1 0 0 3.999 2 2 0 0 0 0-4m0 1c.551 0 1 .45 1 1 0 .552-.449 1-1 1-.55 0-1-.448-1-1 0-.55.45-1 1-1" fill="#FFF"/>
+        <path stroke="#FFF" stroke-width=".75" stroke-linecap="round" d="M13.984 5.966v2"/>
+        <path d="M5.298 6.94a2.001 2.001 0 0 0-.004 4.001 2 2 0 0 0 .004-4.001m0 1a1 1 0 1 1-.006 2 1 1 0 0 1 .006-2" fill="#FFF"/>
+        <path stroke="#FFF" stroke-width=".75" stroke-linecap="round" d="m7.048 9.952 1.732 1"/>
+        <path d="M5.279 16.963a2 2 0 1 0 .004 4 2 2 0 0 0-.004-4m0 1a1.001 1.001 0 1 1-.864 1.5 1 1 0 0 1 .864-1.5" fill="#FFF"/>
+        <path stroke="#FFF" stroke-width=".75" stroke-linecap="round" d="m7.032 17.952 1.732-1"/>
+        <path d="M13.953 21.988a2 2 0 1 0-.002 3.999 2 2 0 0 0 .002-3.999m0 1c.55 0 1 .449 1 1 0 .551-.45 1-1 1-.551 0-1-.449-1-1 0-.551.449-1 1-1" fill="#FFF"/>
+        <path stroke="#FFF" stroke-width=".75" stroke-linecap="round" d="M13.952 21.966v-2"/>
+        <path d="M22.642 16.99a2.001 2.001 0 0 0-.004 4.001 2 2 0 0 0 .004-4.001m0 1a1 1 0 1 1-.006 2 1 1 0 0 1 .006-2" fill="#FFF"/>
+        <path stroke="#FFF" stroke-linecap="round" d="m20.888 17.979-1.732-1"/>
+        <path d="M22.654 6.967a2 2 0 1 0 .004 4 2 2 0 0 0-.004-4m0 1a1.001 1.001 0 1 1-.864 1.5 1 1 0 0 1 .864-1.5" fill="#FFF"/>
+        <path stroke="#FFF" stroke-width=".75" stroke-linecap="round" d="m20.904 9.979-1.732 1"/>
+        <path stroke="#FFF" stroke-width=".75" stroke-linecap="round" stroke-linejoin="round" d="m11.005 18.799 4.272-6.841"/>
+        <path d="M16.652 9.579s1.46 3.266.157 5.354c-1.305 2.087-4.881 2.206-4.881 2.206s-1.461-3.266-.156-5.354c1.304-2.088 4.88-2.206 4.88-2.206z" stroke="#FFF" stroke-width=".75"/>
+    </g>
+</svg>

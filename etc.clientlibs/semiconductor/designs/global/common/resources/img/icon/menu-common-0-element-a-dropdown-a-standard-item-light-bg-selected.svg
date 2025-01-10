@@ -1,0 +1,17 @@
+<svg width="305" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path id="a" d="M0 0h305v40H0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <mask id="b" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <use fill="#FFF" fill-rule="nonzero" xlink:href="#a"/>
+        <g mask="url(#b)" fill="#000" fill-rule="nonzero">
+            <path d="m271.74 24.54-5.628-5.62.942-.944 4.686 4.68 7.206-7.196.942.943z"/>
+        </g>
+        <text mask="url(#b)" font-family="SamsungOne-700, SamsungOne" font-size="14" font-weight="bold" fill="#000">
+                        <tspan x="24" y="23">Exynos 9820</tspan>
+                    </text>
+    </g>
+</svg>

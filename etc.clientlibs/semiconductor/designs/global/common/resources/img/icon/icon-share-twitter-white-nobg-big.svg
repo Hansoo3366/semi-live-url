@@ -1,0 +1,25 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter x="-31.2%" y="-6.7%" width="175%" height="116.1%" filterUnits="objectBoundingBox" id="wmhm2wegba">
+            <feMorphology radius=".5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"/>
+            <feOffset dx="3" dy="3" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"/>
+            <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" in="shadowBlurOuter1"/>
+        </filter>
+        <rect id="xrzezofhub" x="0" y="0" width="48" height="224" rx="24"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g transform="translate(-272 -71)">
+            <rect fill="#F7F7F7" width="312" height="395" rx="20"/>
+            <text transform="translate(24 24)" fill="#000" font-family="SamsungOne-400, SamsungOne" font-size="12">
+                        <tspan x="0" y="42">C/C++ Cluster and Cloud Developer  </tspan>
+                        <tspan x="0" y="58">- Senior Staff Engineer</tspan>
+                    </text>
+        </g>
+        <g transform="translate(-8 -56)">
+            <use fill="#000" filter="url(#wmhm2wegba)" xlink:href="#xrzezofhub"/>
+            <use fill="#FFF" xlink:href="#xrzezofhub"/>
+        </g>
+        <path d="M23.838 13.241c.007.163.012.326.012.49 0 5.01-3.814 10.787-10.788 10.787-2.141 0-4.134-.627-5.812-1.702.297.035.598.052.904.052 1.777 0 3.411-.605 4.71-1.623a3.794 3.794 0 0 1-3.543-2.632 3.825 3.825 0 0 0 1.713-.066 3.792 3.792 0 0 1-3.041-3.717v-.048c.51.284 1.096.455 1.717.475a3.791 3.791 0 0 1-1.173-5.063 10.765 10.765 0 0 0 7.814 3.962 3.792 3.792 0 0 1 6.46-3.458 7.587 7.587 0 0 0 2.408-.92 3.81 3.81 0 0 1-1.666 2.098 7.608 7.608 0 0 0 2.177-.597 7.718 7.718 0 0 1-1.892 1.962" fill="#000"/>
+    </g>
+</svg>
