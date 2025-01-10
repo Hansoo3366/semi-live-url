@@ -1,3 +1,6 @@
+# Git 저장소가 있는 디렉토리로 이동
+cd /volume1/web || exit
+
 # Git 작업 수행
 if [[ `git status --porcelain` ]]; then
   git add .
@@ -5,10 +8,4 @@ if [[ `git status --porcelain` ]]; then
   git push origin main
 else
   echo "No changes to commit"
-
-echo "Current directory: $(pwd)"
-
-cd /volume1/web || exit
-
-echo "After cd: $(pwd)"
 fi
