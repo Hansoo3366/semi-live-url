@@ -5,4 +5,10 @@ if [[ `git status --porcelain` ]]; then
   git push origin main
 else
   echo "No changes to commit"
+
+echo "Current directory: $(pwd)"
+
+cd /volume1/web || exit
+
+echo "After cd: $(pwd)"
 fi
