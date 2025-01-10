@@ -6,7 +6,7 @@ cd /volume1/web || exit
 
 date=`date`
 github_id="Hansoo3366"
-github_Token="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"
+github_Token="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"
 github_Address="github.com/Hansoo3366/semi-live-url"
 logFile="/volume1/web/logs/push.log"
 SourceDir="/volume1/web"
