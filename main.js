@@ -1,4 +1,3 @@
-// import { fileList } from './file_list.js';
 import { fetchData } from './db.js';
 
 async function loadTable() {
@@ -12,7 +11,7 @@ async function loadTable() {
         dataList.forEach((data) => {
             const row = `<tr role="row">
                 <th>${data}</th>
-                <td>${fileList[data]['Global'] || ''}</td>
+                <td>${fileList[data]['Global'] || fileList[data]['GLOBAL'] || ''}</td>
                 <td>${fileList[data]['US'] || ''}</td>
                 <td>${fileList[data]['EMEA'] || ''}</td>
                 <td>${fileList[data]['KR'] || ''}</td>
