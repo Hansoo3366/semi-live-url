@@ -1,1 +1,34 @@
 git add . ...
+
+
+==
+git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   logs/push.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+==
+git commit -m Mon Jan 13 08:52:48 KST 2025 commit
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   logs/push.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+==
+git push!
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/Hansoo3366/semi-live-url/'
+git push Success~!
