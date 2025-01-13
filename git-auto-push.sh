@@ -6,7 +6,7 @@ cd /volume1/web || exit
 
 date=$(date)
 github_id="Hansoo3366"
-github_Token="${GITHUB_TOKEN}"  # 환경 변수 사용
+github_Token="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"  # 환경 변수 사용
 github_Address="github.com/Hansoo3366/semi-live-url"
 logFile="/volume1/web/logs/push.log"
 SourceDir="/volume1/web"
@@ -28,7 +28,7 @@ cd $SourceDir || { echo "Failed to change directory to $SourceDir"; exit 1; }
     git commit -m "$date commit"
 
     echo "git push"
-    git push https://$github_id:$github_Token@$github_Address
+    git push https://$github_Token@github.com/Hansoo3366/semi-live-url.git
 
     echo "== Git 작업 완료 =="
 } >> $logFile 2>&1
