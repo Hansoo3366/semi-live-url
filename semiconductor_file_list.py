@@ -68,6 +68,6 @@ for file_name in os.listdir(directory_path):
 # JavaScript 파일 형식으로 저장
 output_file = "file_list.js"
 with open(output_file, "w", encoding="utf-8") as f:
-    f.write(f"const fileList = {json.dumps(file_json, indent=4)};")
+    f.write(f"export const fileList = {json.dumps(file_json, indent=4)};")
 
 print(f"File list saved to {output_file}")
