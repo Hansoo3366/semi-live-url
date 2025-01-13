@@ -34,3 +34,28 @@ fatal: Authentication failed for 'https://github.com/Hansoo3366/semi-live-url/'
 git push Success~!
 == Git 작업 시작 ==
 git add .
+git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   git-auto-push.sh
+	modified:   logs/push.log
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   logs/push.log
+
+git commit -m "Mon Jan 13 10:11:15 KST 2025 commit"
+[main bba3158] Mon Jan 13 10:11:15 KST 2025 commit
+ 2 files changed, 56 insertions(+), 21 deletions(-)
+git push
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/Hansoo3366/semi-live-url/'
+== Git 작업 완료 ==
+git push Success~!
+== Git 작업 시작 ==
+git add .
