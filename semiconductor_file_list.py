@@ -8,8 +8,8 @@ from pymysql.err import IntegrityError
 # MariaDB 연결 설정
 db_config = {
     'host': '192.168.1.6',
-    'user': 'root',
-    'password': 'Gkstn5484##',
+    'user': 'semi',
+    'password': 'Semi_root12!@',
     'database': 'liveurllist'
 }
 
@@ -19,7 +19,7 @@ def insert_data_safe(date, country, value):
         cursor = connection.cursor()
 
         # 삽입 시도
-        insert_query = "INSERT INTO your_table (date, country, value) VALUES (%s, %s, %s)"
+        insert_query = "INSERT INTO data (date, country, value) VALUES (%s, %s, %s)"
         cursor.execute(insert_query, (date, country, value))
         connection.commit()
 
